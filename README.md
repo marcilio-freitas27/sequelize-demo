@@ -2,7 +2,7 @@
 
 - Sequelize é um ORM, baseado em promises( processamento assíncrono de dados, que pode variar na disponibilidade do valor associado a promise), que significa Object-Relational Mapping ou Mapeamento Objeto-Relacional ao qual tem a função de aproximar o paradgma de orientação à objetos ao relacional, usado para node.js e io.js.
 
-- A api contem rotas para um CRUD/ISUD e uma tela inicial com Hello World. Acessa uma das tabelas de um banco com SGBD PostgreSQL no PgAdmin.
+- A api contem rotas para um CRUD/ISUD com select simples e geral, diferença do tempo de cadastro com moment.js e uma tela inicial com Hello World. Acessa uma das tabelas de um banco com SGBD PostgreSQL no PgAdmin.
 
 - Esta é a minha primeira API, então ainda está em desenvolvimento e com certeza terá melhorias como por exemplo o uso de migrations. Em breve estará disponível uma versão dela com Typescript.
 

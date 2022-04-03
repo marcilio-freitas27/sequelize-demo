@@ -38,6 +38,17 @@ const selectData = async (req, res, result) => {
     res.send(novoProduto);
 }
 
+const selectOne = async (req, res, result) => {
+    const { id } = req.params;
+    const novoProduto = await Produto.findOne({
+        where: {
+            cnpj: id
+        }
+    });
+
+    res.send(novoProduto);
+}
+
 const updateData = async (req, res, result) => {
     const { id } = req.params;
     const { 
@@ -80,10 +91,15 @@ const deleteData = async (req, res, result) => {
 
 
 const differenceDate = async (req, res, result) => {
-    // consulta de todos os dados. 
+    // consulta de alguns dados
     // tb pode usar o attr where 
-    const novoProduto = await Produto.findAll();
-    const antes = moment(novoProduto[0]["createdAt"]);
+    const { id } = req.params;
+    const novoProduto = await Produto.findOne({
+        where:{
+            cnpj:id
+        }
+    });
+    const antes = moment(novoProduto["createdAt"]);
     const depois = moment();
 
     console.log("before: ",antes,"\n","after: ", depois);
@@ -96,6 +112,7 @@ const differenceDate = async (req, res, result) => {
 module.exports = {
     createData,
     selectData,
+    selectOne,
     updateData,
     deleteData,
     differenceDate

@@ -9,6 +9,7 @@ router.post('/insere', resource.createData);
 router.get('/busca', resource.selectData);
 router.delete('/deleta/:id', resource.deleteData);
 router.put('/atualiza/:id', resource.updateData);
-router.get('/diferenca', resource.differenceDate);
+router.get('/diferenca/:id', resource.differenceDate);
+router.get('/busca/:id', resource.selectOne);
 
 module.exports = router;
